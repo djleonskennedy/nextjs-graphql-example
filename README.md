@@ -22,6 +22,6 @@ npm run schema:generate
 yarn schema:generate
 ```
 
-To generate `api.tsx` for client side and `api-ssr.tsx` for servers side
+To generate `/src/graphql/api.tsx` for client side and `/src/graphql/api-ssr.tsx` for server side
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
