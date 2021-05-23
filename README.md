@@ -14,7 +14,7 @@ yarn dev
 
 ## Generate GraphQL Schema
 
-When app is running ru
+When app is running run
 
 ```bash
 npm run schema:generate
