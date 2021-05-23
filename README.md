@@ -22,6 +22,6 @@ npm run schema:generate
 yarn schema:generate
 ```
 
-to generate api.tsx for apollo client requests
+To generate `api.tsx` for client side and `api-ssr.tsx` for servers side
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
