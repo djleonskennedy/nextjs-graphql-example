@@ -11,7 +11,15 @@ const getApolloServerHandler = async () => {
     const schema = await buildSchema({
       resolvers,
     });
-    apolloServerHandler = new ApolloServer({ schema }).createHandler({
+    apolloServerHandler = new ApolloServer({
+      schema,
+      context: ({ req }) => {
+        const context = {
+          req,
+        };
+        return context;
+      },
+    }).createHandler({
       path: "/api/graphql",
     });
   }

@@ -1,0 +1,40 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "classes": true,
+      "defaultParams": true
+    }
+  },
+  "extends": ["eslint:recommended", "eslint-config-prettier"],
+  "plugins": ["eslint-plugin-prettier"],
+  "rules": {
+    "@typescript-eslint/no-explicit-any": 0,
+    "semi": "error",
+    "comma-dangle": ["error", "always-multiline"],
+    "curly": 2,
+    "newline-before-return": 2,
+    "no-console": "error",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "vars": "all",
+        "args": "after-used",
+        "varsIgnorePattern": "^_"
+      }
+    ],
+    "padding-line-between-statements": [
+      "error",
+      { "blankLine": "always", "prev": "*", "next": "if" }
+    ]
+  }
+}

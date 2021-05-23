@@ -1,0 +1,33 @@
+overwrite: true
+schema:
+  - 'http://localhost:3000/api/graphql'
+documents: ['src/**/*.{tsx,ts}']
+generates:
+  src/graphql/api.tsx:
+    config:
+      noNamespaces: true
+      contextType: ../pages/api/context#GraphQLClientContext
+      apolloReactCommonImportFrom: '@apollo/client'
+      apolloReactHooksImportFrom: '@apollo/client'
+      withHooks: true
+      withRefetchFn: true
+      withComponent: false
+      withHOC: false
+      scalars:
+        Function: 'Function'
+        AsyncFunction: '() => Promise<any>'
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+      - typescript-resolvers
+  src/graphql/api-ssr.tsx:
+    config:
+      reactApolloVersion: 3
+      withHooks: true
+      apolloClientInstanceImport: './apollo-client'
+    preset: import-types
+    presetConfig:
+      typesPath: ./api
+    plugins:
+      - 'graphql-codegen-apollo-next-ssr'

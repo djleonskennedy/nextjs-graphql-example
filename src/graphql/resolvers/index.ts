@@ -1,2 +1,2 @@
-import { AlbumsResolver } from "./AlbumsResolver";
-export const resolvers = [AlbumsResolver] as const;
+import { PostsResolver } from "./PostResolver";
+export const resolvers = [PostsResolver] as const;
