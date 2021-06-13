@@ -12,9 +12,24 @@ npm run dev
 yarn dev
 ```
 
-## Generate GraphQL Schema
+## Generate hooks and component for `GraphQL` api calls
 
-When app is running run
+for example query:
+
+```ts
+gql`
+  query Posts {
+    posts {
+      id
+      title
+    }
+  }
+`;
+```
+
+will produce hook `const { data, loading, error } = usePostsQuery();`
+
+When app is up
 
 ```bash
 npm run schema:generate
