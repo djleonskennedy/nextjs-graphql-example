@@ -36,3 +36,6 @@ yarn-error.log*
 # generated api
 /src/graphql/api.tsx
 /src/graphql/api-ssr.tsx
+
+# generated sdl
+/tools/sdl/tmp/
