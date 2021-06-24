@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   ApolloClient,
   InMemoryCache,
@@ -14,13 +15,12 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-export const withApollo = (Comp: NextPage) => (props: any) => {
-  return (
+export const withApollo = (Comp: NextPage) => (props: any) =>
+  (
     <ApolloProvider client={getApolloClient(null, props.apolloState)}>
       <Comp />
     </ApolloProvider>
   );
-};
 
 const getApolloClient = (
   ctx?: any,

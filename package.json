@@ -8,7 +8,7 @@
     "start": "next start",
     "test": "jest --passWithNoTests --testPathIgnorePatterns node_modules .next cypress",
     "eslint:fix": "eslint --fix",
-    "prettier": "prettier --write",
+    "prettier": "prettier -w --ignore-unknown src/**/*.{js,ts,css,scss,md}",
     "generate:schema": "yarn build:sdl && yarn build:api",
     "build:sdl": "ts-node --project ./tools/sdl/tsconfig.json ./tools/sdl/build-sdl.ts",
     "build:api": "gql-gen --config codegen.yml && yarn schema:prettify",
