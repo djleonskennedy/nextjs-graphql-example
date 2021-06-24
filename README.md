@@ -12,7 +12,7 @@ npm run dev
 yarn dev
 ```
 
-## Generate hooks and component for `GraphQL` api calls
+## Generated hooks and components for `GraphQL` api calls
 
 for example query:
 
@@ -29,14 +29,6 @@ gql`
 
 will produce hook `const { data, loading, error } = usePostsQuery();`
 
-When app is up
-
-```bash
-npm run schema:generate
-# or
-yarn schema:generate
-```
-
-To generate `/src/graphql/api.tsx` for client side and `/src/graphql/api-ssr.tsx` for server side
+`yarn build` of `yarn dev` will generate `/src/graphql/api.tsx` for client side and `/src/graphql/api-ssr.tsx` for server side automatically
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
