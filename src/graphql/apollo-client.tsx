@@ -7,11 +7,10 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { NextPage } from 'next';
-
-const GRAPHQL_URL = 'http://localhost:3000/api/graphql';
+import { ENV } from '../config';
 
 const client = new ApolloClient({
-  uri: GRAPHQL_URL,
+  uri: ENV.GRAPHQL_URL,
   cache: new InMemoryCache(),
 });
 
@@ -27,7 +26,7 @@ const getApolloClient = (
   initialState?: NormalizedCacheObject,
 ) => {
   const httpLink = createHttpLink({
-    uri: GRAPHQL_URL,
+    uri: ENV.GRAPHQL_URL,
     fetch,
   });
   const cache = new InMemoryCache().restore(initialState || {});

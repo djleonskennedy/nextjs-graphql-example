@@ -6,7 +6,7 @@ generates:
   src/graphql/api.tsx:
     config:
       noNamespaces: true
-      contextType: ../pages/api/context#GraphQLClientContext
+      contextType: ../graphql/types/context#GraphQLClientContext
       apolloReactCommonImportFrom: '@apollo/client'
       apolloReactHooksImportFrom: '@apollo/client'
       withHooks: true
