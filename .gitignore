@@ -19,6 +19,9 @@
 .DS_Store
 *.pem
 
+# no idea wft is this
+tsconfig.tsbuildinfo
+
 # debug
 npm-debug.log*
 yarn-debug.log*

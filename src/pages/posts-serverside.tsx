@@ -12,8 +12,7 @@ const PostsServersidePage: PagePostsComp = () => {
   );
 };
 
-export const getServerSideProps = async () => {
-  return await ssrPosts.getServerPage({});
-};
+export const getServerSideProps = async () =>
+  ssrPosts.getServerPage({});
 
 export default withApollo(PostsServersidePage);

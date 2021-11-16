@@ -1,6 +1,7 @@
 import {
   Arg,
   FieldResolver,
+  Int,
   Query,
   Resolver,
   Root,
@@ -13,28 +14,24 @@ const JSON_PLACEHOLDER_URL = 'https://jsonplaceholder.typicode.com';
 
 @Resolver(() => Post)
 export class PostsResolver {
-  @Query(() => [Post], { nullable: true })
+  @Query(() => [Post])
   async posts(): Promise<Post[]> {
-    const Posts = await fetch(`${JSON_PLACEHOLDER_URL}/posts`).then(
-      (response) => response.json(),
+    return fetch(`${JSON_PLACEHOLDER_URL}/posts`).then((response) =>
+      response.json(),
     );
-
-    return Promise.resolve(Posts);
   }
 
-  @Query(() => Post)
-  async post(@Arg('id') id: number): Promise<Post> {
-    const Post = await fetch(
-      `${JSON_PLACEHOLDER_URL}/posts/${id}`,
-    ).then((response) => response.json());
-
-    return Promise.resolve(Post);
+  @Query(() => Post, { nullable: true })
+  async post(@Arg('id', () => Int) id: number) {
+    return fetch(`${JSON_PLACEHOLDER_URL}/posts/${id}`).then(
+      (response) => response.json(),
+    );
   }
 
   @FieldResolver(() => [Comment])
-  async comments(@Root() Post: Post): Promise<Comment[]> {
+  async comments(@Root() post: Post) {
     const comments = await fetch(
-      `${JSON_PLACEHOLDER_URL}/posts/${Post.id}/comments`,
+      `${JSON_PLACEHOLDER_URL}/posts/${post.id}/comments`,
     ).then((response) => response.json());
 
     return Promise.resolve(comments);

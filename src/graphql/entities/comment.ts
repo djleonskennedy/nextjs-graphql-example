@@ -1,19 +1,19 @@
-import { Field, ObjectType } from 'type-graphql';
+import { Field, ID, Int, ObjectType } from 'type-graphql';
 
 @ObjectType({ description: 'User comment about post' })
 export class Comment {
-  @Field()
-  postId: number;
+  @Field(() => ID)
+  postId!: number;
 
-  @Field()
-  id: number;
+  @Field(() => Int)
+  id!: number;
 
-  @Field()
-  name: string;
+  @Field(() => String)
+  name!: string;
 
-  @Field()
-  email: string;
+  @Field(() => String)
+  email!: string;
 
-  @Field()
-  body: string;
+  @Field(() => String)
+  body!: string;
 }

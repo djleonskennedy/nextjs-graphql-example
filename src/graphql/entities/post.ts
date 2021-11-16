@@ -1,13 +1,13 @@
-import { Field, ObjectType } from 'type-graphql';
+import { Field, ID, ObjectType } from 'type-graphql';
 
 @ObjectType({ description: 'Album' })
 export class Post {
-  @Field()
-  id: number;
+  @Field(() => ID)
+  id!: number;
 
-  @Field()
-  title: string;
+  @Field(() => String)
+  title!: string;
 
-  @Field()
-  body: string;
+  @Field(() => String)
+  body!: string;
 }
