@@ -8,7 +8,9 @@ import {
 } from '@apollo/client';
 import { NextPage } from 'next';
 
-const GRAPHQL_URL = 'http://localhost:3000/api/graphql';
+const GRAPHQL_URL = `${
+  process.env.VERCEL_URL ?? 'http://localhost:3000'
+}/api/graphql`;
 
 const client = new ApolloClient({
   uri: GRAPHQL_URL,
