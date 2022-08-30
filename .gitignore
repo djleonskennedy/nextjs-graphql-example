@@ -42,3 +42,5 @@ yarn-error.log*
 
 # generated sdl
 /tools/sdl/tmp/
+
+#.env

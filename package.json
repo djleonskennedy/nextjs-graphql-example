@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "yarn generate:schema && next dev",
     "build": "yarn generate:schema && next build",
-    "start": "next start",
+    "start": "generate:schema && next start",
     "test": "jest --passWithNoTests --testPathIgnorePatterns node_modules .next cypress",
     "eslint:fix": "eslint --fix",
     "prettier": "prettier -w --ignore-unknown src/**/*.{js,ts,css,scss,md}",

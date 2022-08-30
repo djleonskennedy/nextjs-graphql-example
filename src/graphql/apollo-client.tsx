@@ -9,7 +9,7 @@ import {
 import { NextPage } from 'next';
 
 const GRAPHQL_URL = `${
-  process.env.VERCEL_URL ?? 'http://localhost:3000'
+  process.env.NEXT_PUBLIC_VERCEL_URL ?? 'http://localhost:3000'
 }/api/graphql`;
 
 const client = new ApolloClient({
